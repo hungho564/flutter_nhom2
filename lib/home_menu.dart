@@ -29,7 +29,7 @@ class HomeMenu extends StatelessWidget {
       _MenuItem(1, Icons.home, 'My Place', const MyPlace()),
       _MenuItem(2, Icons.school, 'Classroom', const MyClassroom()),
       _MenuItem(3, Icons.person, 'My Welcome', const MyWelcome()),
-      _MenuItem(4, Icons.palette, 'Ứng dụng đổi màu nền', const ChangeColorApp()),
+      _MenuItem(4, Icons.palette, 'Ứng dụng đổi màu', const ChangeColorApp()),
       _MenuItem(5, Icons.exposure_plus_1, 'Đếm số', const CounterApp()),
       _MenuItem(6, Icons.login, 'Form đăng nhập', const FormLogin()),
       _MenuItem(7, Icons.person_add, 'Form đăng ký', const FormRegister()),
@@ -101,7 +101,7 @@ class HomeMenu extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
-              '👈 Vuốt từ trái sang hoặc bấm menu để chọn bài',
+              '👈 Chọn một mục ở bên trái để xem nội dung',
               style: TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
