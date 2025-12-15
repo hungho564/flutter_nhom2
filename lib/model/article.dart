@@ -1,0 +1,26 @@
+class Article {
+  final String title;
+  final String description;
+  final String url;
+  final String urlToImage;
+  final String content;
+
+  Article({
+    required this.title,
+    required this.description,
+    required this.url,
+    required this.urlToImage,
+    required this.content,
+  });
+
+  factory Article.fromJson(Map<String, dynamic> json) {
+    return Article(
+      title: json['title'] ?? '',
+      description: json['description'] ?? '',
+      url: json['url'] ?? '',
+      urlToImage: json['urlToImage'] ??
+          'https://i.imgur.com/0Z0Z0Z0.png', 
+      content: json['content'] ?? '',
+    );
+  }
+}
