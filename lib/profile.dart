@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_nhom2/profile_login.dart';
 
 class ProfileScreen extends StatelessWidget {
   final Map<String, dynamic> userData;
@@ -31,15 +32,14 @@ class ProfileScreen extends StatelessWidget {
 
             Text(
               "${userData['firstName']} ${userData['lastName']}",
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
 
             const SizedBox(height: 10),
-            Text("@${userData['username']}",
-                style: TextStyle(color: Colors.grey.shade700)),
+            Text(
+              "@${userData['username']}",
+              style: TextStyle(color: Colors.grey.shade700),
+            ),
 
             const Divider(height: 30),
 
@@ -57,8 +57,22 @@ class ProfileScreen extends StatelessWidget {
                 backgroundColor: Colors.redAccent,
                 foregroundColor: Colors.white,
               ),
-              onPressed: () => Navigator.pop(context),
-            )
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Đăng xuất thành công'),
+                    backgroundColor: Colors.green,
+                    duration: Duration(seconds: 1),
+                  ),
+                );
+
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (_) => const ProfileLogin()),
+                  (route) => false,
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -71,8 +85,10 @@ class ProfileScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          ),
           Text(value, style: const TextStyle(fontSize: 16)),
         ],
       ),
