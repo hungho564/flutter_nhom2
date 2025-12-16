@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nhom2/model/article.dart';
-import 'package:flutter_nhom2/news_api.dart';
-import 'package:flutter_nhom2/news_detail.dart';
+import 'package:flutter_nhom2/Bai_11/news_api.dart';
+import 'package:flutter_nhom2/Bai_11/news_detail.dart';
 
 class NewsListScreen extends StatefulWidget {
   const NewsListScreen({super.key});
